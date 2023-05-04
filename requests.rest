@@ -1,0 +1,8 @@
+
+###
+
+GET http://localhost:3500/game1
+
+###
+
+GET http://localhost:3500/game2
