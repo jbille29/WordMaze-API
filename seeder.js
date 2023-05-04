@@ -3,6 +3,7 @@ const connectDB = require('./config/dbConn')
 const Game1 = require('./models/Game1')
 const moment = require('moment')
 
+
 const generateGrid = require('./utils/GameOne/wordGridGenerator')
 
 connectDB()
@@ -10,9 +11,10 @@ connectDB()
 const importData = async () => {
   try {
     await Game1.deleteMany()
-
-    for (let i = 0; i < 5; i++) {
+    const startDate = new Date();
+    for (let i = 0; i < 15; i++) {
         const date = moment().add(i, 'days').startOf('day').toDate();
+    
         const newCategory = new Game1(
             {...generateGrid(), date})
     
